@@ -1,0 +1,17 @@
+<%= form_with model: @task, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :details %>
+    <%= form.text_area :details %>
+  </div>
+  <% if params[:action] == 'new' %>
+    <%= form.label :completed, "Completed" %>
+    <%= form.check_box :completed %>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
